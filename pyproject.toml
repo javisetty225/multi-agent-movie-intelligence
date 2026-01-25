@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "appliedai-movie-agent"
+version = "0.1.0"
+description = "Conversational chatbot"
+readme = "README.md"
+requires-python = ">=3.12.10"
+authors = [
+  { name = "Nagaraju Javisetty", email = "nagajavisetty143@gmail.com" }
+]
+
+dependencies = [
+ # Backend dependencies
+ "langchain",
+    "langchain_community",
+    "langchain_openai",
+    "langchain-tavily",
+ "langgraph",
+ "sqlalchemy",
+ "faiss-cpu",
+ "chromadb",
+ "pypdf",
+ "serpapi",
+ "python-dotenv",
+ "openai",
+ "tiktoken",
+ "gradio"
+
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+    "httpx",
+    "pytest_mock"
+]
+
+[project.urls]
+Homepage = "https://example.com/appliedai-movie-agent"
+
+[tool.setuptools.packages.find]
+exclude = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+preview = true
+extend-select = [
+    "PLE", "PLW", "PLC", "PLR", "FAST", "I", "D419",
+    "E501", "W291", "UP004", "C416", "B033", "E722"
+]
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
