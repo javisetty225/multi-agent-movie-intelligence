@@ -1,10 +1,13 @@
 import logging
 
+import gradio as gr
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.server_endpoints import register_chatbot_routes
+from src.chatbot_interface import demo
+from src.rest_endpoints import register_movie_intelligence_routes
+
 
 def create_app() -> FastAPI:
     app = FastAPI(
@@ -15,7 +18,6 @@ def create_app() -> FastAPI:
         openapi_tags=[],
     )
 
-    # Add CORS middleware to allow requests from the website
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -23,7 +25,9 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    register_chatbot_routes(app)
+    register_movie_intelligence_routes(app)
+    gr.mount_gradio_app(app, demo , path="/demo")
+
     return app
 
 

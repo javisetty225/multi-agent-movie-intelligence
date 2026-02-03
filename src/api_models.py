@@ -1,7 +1,7 @@
 from pydantic import BaseModel, ConfigDict, Field
 
 
-class ChatMessageRequest(BaseModel):
+class MovieQueryRequest(BaseModel):
     session_id: str = Field(min_length=1, description="Unique identifier for the chat session.")
     user_query: str = Field(min_length=1, description="User message sent to the chatbot.")
 
@@ -9,35 +9,34 @@ class ChatMessageRequest(BaseModel):
         json_schema_extra={
             "example": {
                 "session_id": "673234d0e59d11f091615228ce713ae0",
-                "user_query": "How can I login to my GitHub account?",
+                "user_query": "Who directed Inception?",
             }
         }
     )
 
 
-class SessionMessageResponse(BaseModel):
+class SessionInitializationResponse(BaseModel):
     session_id: str = Field(min_length=1, description="Unique identifier for the chat session.")
-    chatbot_greeting: str = Field(min_length=1, description="Initial greeting message from the chatbot.")
+    welcome_message: str = Field(min_length=1, description="Initial greeting message from the chatbot.")
 
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
                 "session_id": "673234d0e59d11f091615228ce713ae0",
-                "chatbot_greeting": "Hi! I'm your assistant. What can I do for you?",
+                "welcome_message": "Hi! I'm your assistant. What can I do for you?",
             }
         }
     )
 
 
-class ChatMessageResponse(BaseModel):
-    answer: str = Field(min_length=1, description="Chatbot-generated response.")
+class MovieQueryResponse(BaseModel):
+    agent_response: str = Field(min_length=1, description="Chatbot-generated response.")
 
     model_config = ConfigDict(
         json_schema_extra={
             "example": {
-                "answer": (
-                    "To log in to your GitHub account, go to the GitHub login page, "
-                    "enter your email address and password, and submit the form."
+                "agent_response": (
+                    "The movie 'Inception' was directed by Christopher Nolan."
                 )
             }
         }
