@@ -1,3 +1,4 @@
+# ruff: noqa: E501, PLR6301
 import logging
 import os
 from pathlib import Path
