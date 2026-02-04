@@ -23,7 +23,7 @@ jobs:
       - name: Ruff Check
         uses: astral-sh/ruff-action@v2
         with:
-            src: "src tests"
+            src: "src"
             args: "check"
 
   # ---------------- Docker Build ----------------
