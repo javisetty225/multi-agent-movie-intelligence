@@ -34,6 +34,6 @@ uv run python src/main.py
 
 ## User Interface view
 
-#### User asks a question, and the chatbot responds with an answer from the document.
+Users interact with the system through a chat-based interface. Each query is processed by a multi-agent backend that retrieves and combines results from multiple data sources.
 
-<img src="docs/demo_images/1.png" width="600"/>
+<img src="docs/demo_images/1.png" width="800"/>
