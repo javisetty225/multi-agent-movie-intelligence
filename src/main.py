@@ -5,8 +5,8 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.chatbot_interface import demo
-from src.rest_endpoints import register_movie_intelligence_routes
+from src.frontend.chatbot_interface import demo
+from src.backend.rest_endpoints import register_movie_intelligence_routes
 
 
 def create_app() -> FastAPI:

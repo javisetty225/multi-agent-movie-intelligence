@@ -4,8 +4,8 @@ from uuid import uuid4
 from fastapi import FastAPI, HTTPException
 from langchain_core.messages import HumanMessage
 
-from src.api_models import MovieQueryRequest, MovieQueryResponse, SessionInitializationResponse
-from src.movie_agents import supervisor
+from src.backend.api_models import MovieQueryRequest, MovieQueryResponse, SessionInitializationResponse
+from src.backend.movie_agents import supervisor
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("MovieIntelligenceAPI")
