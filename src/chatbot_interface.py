@@ -58,8 +58,8 @@ def initialize_ui_session():
         return gr.update(), gr.update(), None, [{"role": "assistant", "content": "Backend server unreachable."}]
 
 
-with gr.Blocks(title=" AppliedAI Movie Agent System") as demo:
-    gr.Markdown("# 🎬 AppliedAI Movie Agent System")
+with gr.Blocks(title=" Movie Agent System") as demo:
+    gr.Markdown("# 🎬 Movie Agent System")
 
     session_id_state = gr.State()
 

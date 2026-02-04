@@ -1,4 +1,4 @@
-# Applied Movie Agent system
+# Multi Agent Movie Intelligence system
 
 A multi-agent movie intelligence system built with LangChain and LangGraph. This system orchestrates specialized agents to solve complex, multi-modal research tasks across SQL databases, PDF documents (RAG), and real-time web search.
 
@@ -32,9 +32,8 @@ uv run python src/main.py
 - **Web UI**: Access at `http://127.0.0.1:8000/demo`
 - **REST Documentation**: Access at `http://127.0.0.1:8000/docs`
 
-## AI Disclosure
+## User Interface view
 
-To follow the project rules, I am disclosing that I used Claude AI as a technical assistant while building this project. I designed the core logic and the agent system myself, but I used the AI to help with these specific parts:
-- `Refining the Prompts`: Wrote the main instructions for the agents, and Claude helped me polish them. It helped me add clear examples so the Supervisor knows how to break down hard questions and which data source to trust most (like trusting the SQL database over a web search).
-- `Organizing the Code`: The AI helped me tidy up my code into a cleaner structure. It also helped me write the "error handling" part that prevents the whole system from crashing if a tool or a database query runs into a problem.
-- `Chatbot Interface`: I defined the requirements for how the chatbot interface should look. Based on my instructions, Claude provided the code to build the UI.
+#### User asks a question, and the chatbot responds with an answer from the document.
+
+<img src="docs/demo_images/1.png" width="600"/>

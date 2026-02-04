@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "appliedai-movie-agent"
+name = "multi-agent-movie-intelligence"
 version = "0.1.0"
 description = "multi-agent movie intelligence system"
 readme = "README.md"
