@@ -64,7 +64,7 @@ def initialize_resources() -> tuple[SQLDatabase, VectorStoreRetriever]:
     Returns:
         A tuple containing the initialized SQLDatabase and VectorStoreRetriever.
     """
-    PROJECT_ROOT = Path(__file__).parent.parent
+    PROJECT_ROOT = Path(__file__).resolve().parents[2]
     DB_PATH = PROJECT_ROOT / "data" / "SQL_Movies.db"
     PDF_PATH = PROJECT_ROOT / "data" / "RAG_movies.pdf"
     CHROMA_PATH = PROJECT_ROOT / "data" / "chroma_db"
